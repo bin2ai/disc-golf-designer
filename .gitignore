@@ -82,5 +82,5 @@ Thumbs.db
 temp_*.stl
 *.log
 
-# Ignore Streamlit files
-.streamlit/
+# Ignore Streamlit local cache (but keep config)
+.streamlit/secrets.toml
