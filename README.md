@@ -2,9 +2,12 @@
 
 A professional, industry-grade disc golf design tool built with Python and Streamlit. Create PDGA-compliant disc designs with real-time visualization, interactive controls, and 3D model generation.
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://disc-golf-designer.streamlit.app)
+
 ![Disc Golf Designer](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Streamlit](https://img.shields.io/badge/Streamlit-Latest-red)
 ![License](https://img.shields.io/badge/License-MIT-green)
+![Live App](https://img.shields.io/badge/Live%20App-Online-brightgreen)
 
 ## Features
 
@@ -45,24 +48,39 @@ A professional, industry-grade disc golf design tool built with Python and Strea
 - **Weight Estimation**: Based on volume calculation and plastic density
 - **Rim Dimensions**: Depth and width measurements
 
-## Installation
+## 🌐 Live Application
 
-1. **Clone or download the project files**
+**Try it now!** 🔗 **[disc-golf-designer.streamlit.app](https://disc-golf-designer.streamlit.app)**
+
+No installation required - use the live web application instantly!
+
+## 💻 Local Installation
+
+1. **Clone or download the project files**:
+   ```bash
+   git clone https://github.com/bin2ai/disc-golf-designer.git
+   cd disc-golf-designer
+   ```
+
 2. **Install Python dependencies**:
    ```bash
    pip install -r requirements.txt
    ```
 
-## Usage
+## 🚀 Usage
 
+### Online (Recommended)
+Visit **[disc-golf-designer.streamlit.app](https://disc-golf-designer.streamlit.app)** and start designing immediately!
+
+### Local Development
 1. **Start the application**:
    ```bash
-   streamlit run disc_designer.py
+   streamlit run app.py
    ```
 
 2. **Open your browser** to the displayed URL (usually `http://localhost:8501`)
 
-3. **Design your disc**:
+### Design Your Disc
    - Use the sidebar controls to adjust control points
    - Modify curve parameters for smooth transitions
    - Watch real-time validation and calculations

@@ -10,6 +10,38 @@ import trimesh
 import io
 import base64
 
+# Performance optimization for Streamlit Cloud
+@st.cache_data
+def create_cached_mesh(vertices, faces):
+    """Create and cache mesh objects for better performance"""
+    return trimesh.Trimesh(vertices=vertices, faces=faces)
+
+@st.cache_data
+def calculate_cached_spline(points, smoothing=0.1):
+    """Cache spline calculations for better performance"""
+    if len(points) < 2:
+        return np.array([]), np.array([])
+    
+    x_coords = [p[0] for p in points]
+    y_coords = [p[1] for p in points]
+    
+    if len(points) == 2:
+        t = np.linspace(0, 1, 100)
+        x_interp = np.interp(t, [0, 1], x_coords)
+        y_interp = np.interp(t, [0, 1], y_coords)
+    else:
+        t = np.linspace(0, 1, len(points))
+        t_new = np.linspace(0, 1, 100)
+        
+        try:
+            tck_x, _ = interpolate.splprep([x_coords, y_coords], s=smoothing, k=min(3, len(points)-1))
+            x_interp, y_interp = interpolate.splev(t_new, tck_x)
+        except:
+            x_interp = np.interp(t_new, t, x_coords)
+            y_interp = np.interp(t_new, t, y_coords)
+    
+    return x_interp, y_interp
+
 # Configure page
 st.set_page_config(
     page_title="Disc Golf Designer Pro",
