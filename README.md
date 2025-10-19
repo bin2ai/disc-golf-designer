@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="media/logo.png" alt="Disc Golf Designer Pro Logo" width="120" height="120">
+  <img src="media/logo.png" alt="Disc Golf Designer Pro Logo" width="80" height="80">
   <h1>Disc Golf Designer Pro</h1>
 </div>
 
@@ -19,9 +19,26 @@ A professional, industry-grade disc golf design tool built with Python and Strea
 ---
 
 <div align="center">
-  <img src="media/ad.png" alt="Disc Golf Designer Advertisement" width="800">
+  <img src="media/ad.png" alt="Disc Golf Designer Advertisement" width="400">
   <br>
   <em>Experience professional disc design with real-time visualization and PDGA compliance validation!</em>
+  
+  <br><br>
+  
+  <!-- MP4 Video with Audio -->
+  <!-- MP4 Video with Audio -->
+  <details>
+    <summary>📹 <strong>Watch Full Video Demo with Audio</strong> (Click to expand)</summary>
+    <br>
+    <video width="400" controls>
+      <source src="media/ad.mp4" type="video/mp4">
+      <a href="media/ad.mp4">Download Video</a> if your browser doesn't support embedded video.
+    </video>
+    <br>
+    <em>🔊 Full demonstration with audio narration!</em>
+    <br><br>
+    <a href="media/ad.mp4" download>📥 Download Video (MP4)</a>
+  </details>
 </div>
 
 ---
@@ -67,7 +84,7 @@ A professional, industry-grade disc golf design tool built with Python and Strea
 
 ## 🌐 Live Application
 
-**Try it now!** 🔗 **[disc-golf-designer.streamlit.app](https://disc-golf-designer.streamlit.app)**
+**Try it now!** 🔗 **[https://disc-golf-designer.streamlit.app](https://disc-golf-designer.streamlit.app)**
 
 No installation required - use the live web application instantly!
 
@@ -87,7 +104,7 @@ No installation required - use the live web application instantly!
 ## 🚀 Usage
 
 ### Online (Recommended)
-Visit **[disc-golf-designer.streamlit.app](https://disc-golf-designer.streamlit.app)** and start designing immediately!
+Visit **[https://disc-golf-designer.streamlit.app](https://disc-golf-designer.streamlit.app)** and start designing immediately!
 
 ### Local Development
 1. **Start the application**:
