@@ -1,6 +1,11 @@
-# Disc Golf Designer Pro
+<div align="center">
+  <img src="media/logo.png" alt="Disc Golf Designer Pro Logo" width="120" height="120">
+  <h1>Disc Golf Designer Pro</h1>
+</div>
 
 A professional, industry-grade disc golf design tool built with Python and Streamlit. Create PDGA-compliant disc designs with real-time visualization, interactive controls, and 3D model generation.
+
+<div align="center">
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://disc-golf-designer.streamlit.app)
 
@@ -8,6 +13,18 @@ A professional, industry-grade disc golf design tool built with Python and Strea
 ![Streamlit](https://img.shields.io/badge/Streamlit-Latest-red)
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Live App](https://img.shields.io/badge/Live%20App-Online-brightgreen)
+
+</div>
+
+---
+
+<div align="center">
+  <img src="media/ad.png" alt="Disc Golf Designer Advertisement" width="800">
+  <br>
+  <em>Experience professional disc design with real-time visualization and PDGA compliance validation!</em>
+</div>
+
+---
 
 ## Features
 

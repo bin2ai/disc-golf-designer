@@ -42,10 +42,39 @@ def calculate_cached_spline(points, smoothing=0.1):
     
     return x_interp, y_interp
 
+@st.cache_data
+def load_logo():
+    """Load and cache the logo for favicon"""
+    try:
+        import os
+        logo_path = os.path.join(os.path.dirname(__file__), "media", "logo.png")
+        if os.path.exists(logo_path):
+            return logo_path
+        else:
+            return "🥏"  # Fallback emoji
+    except:
+        return "🥏"  # Fallback emoji
+
+@st.cache_data
+def get_logo_base64():
+    """Convert logo to base64 for embedding in HTML"""
+    try:
+        import os
+        logo_path = os.path.join(os.path.dirname(__file__), "media", "logo.png")
+        if os.path.exists(logo_path):
+            with open(logo_path, "rb") as f:
+                logo_bytes = f.read()
+            logo_base64 = base64.b64encode(logo_bytes).decode()
+            return f"data:image/png;base64,{logo_base64}"
+        else:
+            return None
+    except:
+        return None
+
 # Configure page
 st.set_page_config(
     page_title="Disc Golf Designer Pro",
-    page_icon="🥏",
+    page_icon=load_logo(),
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -669,13 +698,27 @@ def create_simplified_profile(x_coords, y_coords, target_points=15):
     return x_simplified, y_simplified
 
 def main():
-    # Header
-    st.markdown("""
-    <div class="main-header">
-        <h1>🥏 Disc Golf Designer Pro</h1>
-        <p style="color: white; text-align: center; margin: 0;">Professional PDGA-Compliant Disc Design Tool</p>
-    </div>
-    """, unsafe_allow_html=True)
+    # Header with logo
+    logo_base64 = get_logo_base64()
+    if logo_base64:
+        st.markdown(f"""
+        <div class="main-header">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 15px;">
+                <img src="{logo_base64}" style="height: 60px; width: auto;" alt="Disc Golf Designer Logo">
+                <div>
+                    <h1 style="margin: 0;">Disc Golf Designer Pro</h1>
+                    <p style="color: white; text-align: center; margin: 0; font-size: 0.9em;">Professional PDGA-Compliant Disc Design Tool</p>
+                </div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+    else:
+        st.markdown("""
+        <div class="main-header">
+            <h1>🥏 Disc Golf Designer Pro</h1>
+            <p style="color: white; text-align: center; margin: 0;">Professional PDGA-Compliant Disc Design Tool</p>
+        </div>
+        """, unsafe_allow_html=True)
     
     # Initialize session state
     if 'disc_profile' not in st.session_state:
